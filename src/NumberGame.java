@@ -1,16 +1,19 @@
 import java.util.Scanner;
+
 public class NumberGame {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         IGuess iGuess = new IGuess();
-        ComputerGuess CGuess = new ComputerGuess();
-        System.out.println("do you want to guess number (press 1) or do you want conputer to guess your number (press 2)?");
-        Scanner s = new Scanner(System.in);
-        int c = s.nextInt();
+        ComputerGuess compGuess = new ComputerGuess();
+        System.out.println(
+                "do you want to guess number (press 1) or do you want conputer to guess your number (press 2)?");
+
+        int c = scanner.nextInt();
         if (c == 1)
             iGuess.game();
         else
-            CGuess.CompGuess();
+            compGuess.CompGuess();
 
+        scanner.close();
     }
-
 }
